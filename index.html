@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+    <title>The Cluster - Home</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/index.css" />
+
+    <!--[if lt IE 9]>
+    <script src="lib/html5shiv/dist/html5shiv.min.js"></script>
+    <script src="lib/respond/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <nav id="sso" role="navigation">
+        <div class="container">
+            <div id="links">
+                <a id="in" href="http://clustermc.org/forums/index.php?login/">Log in</a> <span id="up">/ <a href="http://clustermc.org/forums/index.php?login/">Sign up</a></span>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <div class="ipwrapper">
+        <div id="cts">Click to Select IP</div>
+        <div id="ip"><span>IP: <span id="ipSelect">clustermc.org</span></span></div>
+        </div>
+    </header>
+        
+
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div id="down" class="navbar-left"></div>
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li id="home"><a href="#/home">Home</a></li>
+                    <li id="forums"><a href="/forums">Forums</a></li>
+                    <li id="stats"><a href="#/stats">Stats</a></li>
+                    <li id="games"><a href="#/games">Games</a></li>
+                    <li id="shop"><a href="#/shop">Shop</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="main">
+        <div class="container">
+            <div class="row">
+                <div id="app-wrapper">
+                    <div id="app" v-view="currentView.name">
+                        <h2 id="loading">Loading...</h2>
+                    </div>
+                </div>
+
+                <div id="sidebar">
+                    <div id="strip"></div>
+                    <div id="playerStatus">
+                        <h4><strong>Players:</strong></h4>
+                        <p id="status"><span id="online">?</span>/<span id="max">Loading...</span></p>
+                    </div>
+                    <div class="ribbon">
+                        <h1>V O T E</h1>
+                    </div>
+                    <div id="vote">
+                        <p>Get <strong>so and so</strong> perks for voting on each link!</p>
+                        <a class="button" href="#">CLICK FOR LINKS</a>
+                    </div>
+                    <div class="ribbon">
+                        <h1>S T A T S</h1>
+                    </div>
+                    <div id="sidestats">
+                        <h4><strong>Top players:</strong></h4>
+                        <p><span class="player"><a href="#/stats/thesbros">acer5999</a></span><span class="stat">9001 points</span></p>
+                        <p><span class="player"><a href="#/stats/ktar5">ktar5</a></span><span class="stat">1894 points</span></p>
+                        <a class="button" href="#/stats">STATS PAGE</a>
+                    </div>
+                    <div class="ribbon">
+                        <h1>S P O N S O R</h1>
+                    </div>
+                    <div id="sponsor">
+                        <a href="http://exodushosting.net"><img src="images/exodus.png" /></a>
+                    </div>
+                    <div class="ribbon">
+                        <h1>F O R U M S</h1>
+                    </div>
+                    <div id="sideforums">
+                        <h4><strong>Recent posts:</strong></h4>
+                        <p><span class="title"><a href="#">I need some help</a></span><span class="date">5 minutes ago</span></p>
+                        <p><span class="title"><a href="#">LOL YOLO</a></span><span class="date">9 minutes ago</span></p>
+                        <a class="button" href="/forums">GO TO FORUMS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <ul class="list-unstyled" id="social">
+            <li><a href="https://youtube.com/MCTheCluster"><img src="images/youtube.png" /></a><span id="socialSpan">Youtube</span></li>
+            <li><a href="https://twitter.com/TheCluster_MC"><img src="images/twitter.png" /></a><span id="socialSpan">Twitter</span></li>
+            <li><a href="http://planetminecraft.com"><img src="images/pmc.png" /></a><span id="socialSpan">Planet Minecraft</span></li>
+        </ul>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                    <h3><span id="brand">Mineshaft</span> <span id="mc">Minecraft Server</span></h3>
+                    <br>
+                    <p>&copy; Mineshaft Network 2015</p>
+                    <p>
+                        Mineshaft Network is not affiliated with Mojang AB.
+                        <br>
+                        Minecraft is property of Mojang AB.
+                    </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/vue/dist/vue.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="lib/director/build/director.min.js"></script>
+    <script src="scripts/index.js"></script>
+    <script type="text/x-template" id="home-template">
+        <div id="posts">
+            <div class="col-md-7 post" v-component="blog-post" v-repeat="posts">
+
+            </div>
+</body>
+</html>
